@@ -1,9 +1,10 @@
 from discord import *
 from discord.ext import commands
 from dotenv import load_dotenv
+from utils.config import EXTENSIONS
 from os import getenv
 
-client = commands.Bot(command_prefix=":")
+client = commands.Bot(command_prefix=":", intents=Intents.all())
 load_dotenv()
 
 async def main():
