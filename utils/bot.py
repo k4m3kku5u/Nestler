@@ -9,7 +9,7 @@ load_dotenv()
 
 async def main():
     async with client:
-        for ext in None:
+        for ext in EXTENSIONS:
             await client.load_extension(ext)
         await client.start(getenv("CLIENT_TOKEN"))
 
