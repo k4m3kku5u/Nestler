@@ -6,4 +6,4 @@ class general(commands.Cog):
         self.client = client
 
 async def setup(client):
-    client.add_cog(general(client))
+    await client.add_cog(general(client))
