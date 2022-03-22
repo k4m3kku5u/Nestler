@@ -1,4 +1,4 @@
-COGS = [
+EXTENSIONS = [
     "cogs.general",
-    "cogs.moderation"
+    "cogs.moderation",
 ]

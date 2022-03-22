@@ -1,5 +1,5 @@
-from asyncio import run
-from utils.bot import init
+import asyncio
+from utils.bot import main
 
-if __name__ == "__main__":
-    run(init())
+if __name__ is "__main__":
+    asyncio.run(main())
