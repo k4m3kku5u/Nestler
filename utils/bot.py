@@ -15,6 +15,6 @@ async def main():
 
 @client.event
 async def on_ready():
-    client.change_presence(activity=Activity(type=ActivityType.watching, name="over the nests!"))
-    client.tree.sync(guild=Object(id=919846932459974686))
+    await client.change_presence(activity=Activity(type=ActivityType.watching, name="over the nests!"))
+    await client.tree.sync(guild=Object(id=919846932459974686))
 
