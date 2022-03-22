@@ -6,4 +6,4 @@ class moderation(commands.Cog):
         self.client = client
 
 async def setup(client):
-    client.add_cog(moderation(client))
+    await client.add_cog(moderation(client))
