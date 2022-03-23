@@ -1,25 +1,24 @@
 from discord import Embed
 
-def banEmbed(title: str, desc: str, clr: hex, time: int) -> Embed:
+def banEmbed():
     return Embed(
-        title = title,
-        description = desc,
-        color = clr,
-        timestamp = time
+        title="",
+        description="",
+        color=0x000000,
+        timestamp=datetime.utcnow(),
+        type="rich"
     )
 
-def kickEmbed(title: str, desc: str, clr: hex, time: int) -> Embed:
+def pingEmbed():
     return Embed(
-        title = title,
-        description = desc,
-        color = clr,
-        timestamp = time
-    )
-
-def pingEmbed(title: str, desc: str, clr: hex, time: int) -> Embed:
-    return Embed(
-        title = title,
-        description = desc,
-        color = clr,
-        timestamp = time
+        title="Ping/Pong Procedure",
+        description="Measures the latency of the active client.\n" + 
+                    "────────────────────────\n" +
+                    "client = Discord bot\n" +
+                    "dapi = Discord API\n" +
+                    "ms = Milliseconds\n" + 
+                    "────────────────────────", 
+        color=0x000000,
+        timestamp=datetime.utcnow(),
+        type="rich"
     )
