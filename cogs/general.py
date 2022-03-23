@@ -9,7 +9,7 @@ class general(commands.Cog):
     
     @app_commands.command(name="ping", description="A general utility to fetch latency times or test commands.")
     @app_commands.guilds(919846932459974686)
-    async def ping(self, interaction: Interaction)
+    async def ping(self, interaction: Interaction):
         embed = pingEmbed()
         embed.set_author(name=f'{interaction.user.name}', icon_url=interaction.user.avatar)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/919847648758992927/953452806872911892/the_nest.jpg")
