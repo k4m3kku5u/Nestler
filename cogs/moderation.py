@@ -18,11 +18,11 @@ class moderation(commands.Cog):
         
         if interaction.guild.owner():
             await interaction.guild.ban(user=member)
-            await interaction.response.send_message=('Ban information was sent to the staff logs!')
+            await interaction.response.send_message('Ban information was sent to the staff logs!')
             await chanel.send(embed=embed)
         elif interaction.user.get_role(953018980522672148):
             await interaction.guild.ban(user=member)
-            await interaction.response.send_message=('Ban information was sent to the staff logs!')
+            await interaction.response.send_message('Ban information was sent to the staff logs!')
             await channel.send(embed=embed)
         else:
             await interaction.response.send_message('Insufficient role!')
