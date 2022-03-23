@@ -1,3 +1,4 @@
+from datetime import datetime
 from discord import Embed
 
 def banEmbed():
