@@ -7,6 +7,7 @@ class moderation(commands.Cog):
     
     @app_commands.command(name="ban", description="Banishes the offender permanently from the guild.")
     @app_commands.guilds(919846932459974686)
+    @app_commands.checks.has_permissions(ban_members=True)
     async def ban(self, interaction: Interaction, member: Member, *, reason: str):
         embed = banEmbed()
         channel = interaction.guild.get_channel(956321900123021432)
@@ -16,16 +17,14 @@ class moderation(commands.Cog):
         embed.add_field(name="Offender ID,", value=member.id, inline=False)
         embed.add_field(name="Ban Reason,", value=f'{reason}', inline=False)
         
-        if interaction.guild.owner():
-            await interaction.guild.ban(user=member)
-            await interaction.response.send_message('Ban information was sent to the staff logs!')
-            await chanel.send(embed=embed)
-        elif interaction.user.get_role(953018980522672148):
-            await interaction.guild.ban(user=member)
+        if member is interaction.user:
+            await interaction.response.send_message("Must supply a valid parameter other than yourself!")
+        elif member is interaction.guild.owner:
+            await interaction.response.send_message("Nice try though! You cannot ban the guild owner.")
+        else:
+            await interaction.guild.ban(user=member, reason=reason)
             await interaction.response.send_message('Ban information was sent to the staff logs!')
             await channel.send(embed=embed)
-        else:
-            await interaction.response.send_message('Insufficient role!')
    
 async def setup(client):
     await client.add_cog(moderation(client))
