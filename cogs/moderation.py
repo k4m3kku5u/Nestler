@@ -25,6 +25,26 @@ class moderation(commands.Cog):
             await interaction.guild.ban(user=member, reason=reason)
             await interaction.response.send_message('Ban information was sent to the staff logs!')
             await channel.send(embed=embed)
+        
+    @app_commands.command(name="kick", description="Removes offender from the guild temporarily")
+    @app_commands.guilds(919846932459974686)
+    @app_commands.checks.has_permissions(kick_members=True)
+    async def kick(self, interaction: Interaction, member: Member, *, reason: str):
+        embed = kickEmbed()
+        channel = interaction.guild.get_channel(956321582823919706)
+        embed.set_author(name=interaction.user, icon_url=interaction.user.avatar)
+        embed.add_field(name="Discord Username,", value=member.name, inline=False)
+        embed.add_field(name="Discord Identifier,", value=member.id, inline=False)
+        embed.add_field(name="Reason for removal,", value=reason, inline=False)
+
+        if member is interaction.user:
+            await interaction.response.send_message("Must supply a valid parameter other than yourself!")
+        elif member is interaction.guild.owner:
+            await interaction.response.send_message("Nice try though! You cannot ban the guild owner.")
+        else:
+            await interaction.guild.kick(user=member, reason=reason)
+            await interaction.response.send_message("Kick information was sent to the staff logs!")
+            await channel.send(embed=embed)
    
 async def setup(client):
     await client.add_cog(moderation(client))
