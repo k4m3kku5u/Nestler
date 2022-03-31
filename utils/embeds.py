@@ -3,8 +3,15 @@ from discord import Embed
 
 def banEmbed():
     return Embed(
-        title="",
-        description="",
+        title="Offense Report",
+        color=0x000000,
+        timestamp=datetime.utcnow(),
+        type="rich"
+    )
+
+def kickEmbed():
+    return Embed(
+        title="Offense Report",
         color=0x000000,
         timestamp=datetime.utcnow(),
         type="rich"
