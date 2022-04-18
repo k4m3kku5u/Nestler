@@ -1,2 +1,2 @@
 # Nestler
-An automated moderation bot and other stuff. etc
+**Work in progress...**
