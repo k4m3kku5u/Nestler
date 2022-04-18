@@ -31,7 +31,7 @@ func main() {
   status := discordgo.UpdateStatusData {
     Activities: []*discordgo.Activity {
       {
-        Name: " myself grow."
+        Name: " over the nests."
         Type: 3,
       },
     },
@@ -88,6 +88,5 @@ func main() {
         fmt.Printf("Error occurred during deletion of %v command: %v", v.Name, err)
       }
     }
-  }
-  
+  }  
 }
